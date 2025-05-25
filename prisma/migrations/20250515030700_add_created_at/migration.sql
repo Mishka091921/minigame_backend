@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `ChargeHistory` ADD COLUMN `approved_at` DATETIME(3) NULL,
+    ADD COLUMN `created_at` DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3);

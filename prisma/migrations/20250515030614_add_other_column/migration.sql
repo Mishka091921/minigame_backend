@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `ChargeHistory` ADD COLUMN `amount` INTEGER NOT NULL DEFAULT 0,
+    ADD COLUMN `status` INTEGER NOT NULL DEFAULT 0;
