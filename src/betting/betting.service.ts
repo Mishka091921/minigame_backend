@@ -18,7 +18,7 @@ constructor(
   // }
   async placeBet(bettingDto: BettingDTO, user_id){
 
-    //Test
+    
 
     const { amount : betting_amount, round_id, game_name, bet_type } = bettingDto;
 
