@@ -11,7 +11,8 @@ import { AppLogger } from './common/logger/logger.service';
 import { BettingModule } from './betting/betting.module';
 import { SharedModule } from './shared/shared.module';
 import { MongoSchemasModule } from 'mongo-module/mongo-schemas.module';
-import { ProcessResultModule } from './process_result/process_result.module';
+import { RabbitMQModule } from './rabbitmq/rabbitmq.module';
+import { SettlementModule } from './settlement/settlement.module';
 
 @Module({
   imports: [
@@ -30,8 +31,8 @@ import { ProcessResultModule } from './process_result/process_result.module';
     PrismaModule, 
     ChargingModule, 
     BettingModule,
-    ProcessResultModule,
-    
+    RabbitMQModule,
+    SettlementModule,
   ],
   
   controllers:[

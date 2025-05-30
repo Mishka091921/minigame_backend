@@ -11,19 +11,16 @@ import { User } from 'src/common/decorators/user.decorator';
 @Controller('place-bet')
 export class BettingController {
 
-
   constructor(
     private readonly userBalanceService: UserBalanceService,
     private readonly bettingService: BettingService
   )
   {}
 
-  
-
   @Post()
   async placeBet(@Body() bettingDto: BettingDTO, @User() user: any) {
-      console.log(bettingDto);
-      console.log(user);
+      //Check Player if user has balance
+
       // Validate the user balance
       this.bettingService.placeBet(bettingDto, user.id)
 

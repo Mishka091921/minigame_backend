@@ -7,6 +7,6 @@ import { PrismaModule } from '../prisma/prisma.module';
 @Module({
   imports: [PrismaModule],
   providers: [UserBalanceService],
-  exports: [UserBalanceService], // 👈 so other modules can use it
+  exports: [UserBalanceService], 
 })
 export class SharedModule {}
