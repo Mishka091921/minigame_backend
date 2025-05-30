@@ -21,6 +21,7 @@ model User {
   //Relationships
   chargeHistories ChargeHistory[]  @relation("UserChargeHistories")
   approvedHistories  ChargeHistory[]   @relation("ApprovedByUser")
+  bettingRounds   BettingRound[]      // Relation to BettingRound
 }
 
 model ChargeHistory {
@@ -39,6 +40,18 @@ model ChargeHistory {
   approvedBy   User?     @relation("ApprovedByUser", fields: [approved_by], references: [id])
 }
 
+model BettingRound{
+  id Int @id @default(autoincrement())
+  user_id Int
+  game_name String
+  betting_amount Int @default(0)
+  winning_amount Int @default(0)
+  betting_status Int @default(0) // 0: pending, 1: win, 2: lose, 3: draw  
+  round_id String
+  bet_type Int @default(0)
+  user    User @relation(fields: [user_id], references: [id])
+
+}
 
 
 //ENUMS
