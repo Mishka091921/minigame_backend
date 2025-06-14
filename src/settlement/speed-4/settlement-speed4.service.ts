@@ -6,7 +6,7 @@ import { UserBalanceService } from "src/shared/user-balance.service";
 import { AppLogger } from "src/common/logger/logger.service";
 
 @Injectable()
-export class SettlementMaze2Service implements IsettlementHandler{
+export class SettlementSpeed4Service implements IsettlementHandler{
   constructor(
     
     private readonly prisma: PrismaService,
@@ -15,12 +15,14 @@ export class SettlementMaze2Service implements IsettlementHandler{
   ){}
   
   getGameName(): string {
-      return 'maze_2';
+      return 'speed_4';
   }
 
   async settle(round_id: string, data: any): Promise<void>{
-    //Initialize the game odds for maze_2
-    const game_odds = GameOdds.game_odds['maze_2'];
+    //Initialize the game odds for speed_4
+
+    console.log(data,'speed 4');
+    const game_odds = GameOdds.game_odds['speed_4'];
 
     // Extract the first part of the result
     const resultParts = data.result.split(' | ');
@@ -28,6 +30,8 @@ export class SettlementMaze2Service implements IsettlementHandler{
   
     // Format to match desired variable name
     const ball_winner = firstBall.replace(' ', '_');
+
+    console.log(ball_winner, 'ball winner for speed 4');
   
     // Extract the number from ball_winner
     const ballNumber = parseInt(firstBall.split(' ')[1], 10);
@@ -42,7 +46,7 @@ export class SettlementMaze2Service implements IsettlementHandler{
     where: {
       betting_status:0,
       round_id: round_id,
-      game_name: 'maze_2', // make sure to filter by game name as well
+      game_name: 'speed', // make sure to filter by game name as well
     },
   });
 

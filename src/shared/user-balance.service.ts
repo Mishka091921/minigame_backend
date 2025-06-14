@@ -21,4 +21,15 @@ export class UserBalanceService {
   //     },
   //   });
   // }
+
+   async incrementMoney(userId: number, amount: number): Promise<void> {
+    await this.prisma.user.update({
+      where: { id: userId },
+      data: {
+        money: {
+          increment: amount,
+        },
+      },
+    });
+  }
 }

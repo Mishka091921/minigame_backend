@@ -22,19 +22,15 @@ export class RabbitMQConsumerService implements OnModuleInit {
           'minigames',
           async (msg) => {
             if (msg !== null) {
-
-
+            
               const messageString = msg.content.toString();
               let content;
               content = JSON.parse(messageString);
-              // Example: do something based on the event
+
+              //Settlement Logic
               if (content.event == 'result') {
-                  console.log(content.data);
-
-                  // await this.handleUserRegistered(content.data);
-
+                
                   await this.settlementService.settleBetsByGame(content.data.game_name, content.data.round_id, content.data);
-
               }
 
               // channel.ack(msg);
@@ -49,10 +45,5 @@ export class RabbitMQConsumerService implements OnModuleInit {
     this.connection.on('disconnect', (err) =>
       console.error('❌ Disconnected from RabbitMQ', err),
     );
-  }
-
-  private async handleUserRegistered(data: any) {
-    console.log(`🎉 Welcome email sent to ${data.email}`);
-    // You could also call a mail service or log to a DB
   }
 }

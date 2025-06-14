@@ -46,9 +46,15 @@ model BettingRound{
   game_name String
   betting_amount Int @default(0)
   winning_amount Int @default(0)
-  betting_status Int @default(0) // 0: pending, 1: win, 2: lose, 3: draw  
+  betting_status Int @default(0) // 0: pending, 1: lose, 2: win, 3: draw  
   round_id String
-  bet_type Int @default(0)
+  bet_type String?
+
+
+  created_at     DateTime @default(now())
+  updated_at     DateTime @updatedAt
+
+  //Relationship
   user    User @relation(fields: [user_id], references: [id])
 
 }

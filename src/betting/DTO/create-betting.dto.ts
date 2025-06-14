@@ -10,8 +10,8 @@ export class BettingDTO {
     @IsString()
     game_name: string;
 
-    @IsNumber()
-    bet_type: number;
+    @IsString()
+    bet_type: string;
 }
 
 

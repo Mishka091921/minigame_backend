@@ -1,0 +1,28 @@
+{
+  "game_odds": {
+    "maze_2":{
+      "ball_1": 1.9,
+      "ball_2": 1.9,
+      "odd": 1.9,
+      "even": 1.9
+    },
+    "speed_4":{
+      "ball_1": 2.9,
+      "ball_2": 2.9,
+      "ball_3": 2.9,
+      "ball_4": 2.9,
+      "odd": 1.9,
+      "even": 1.9
+    },
+    "speed_6":{
+      "first": 4.9,
+      "second": 4.9,
+      "third": 4.9,
+      "fourth": 4.9,
+      "fifth": 4.9,
+      "sixth": 4.9,
+      "odd": 1.9,
+      "even": 1.9
+    }
+  }
+}
